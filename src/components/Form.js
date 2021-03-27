@@ -34,6 +34,7 @@ function Form() {
 						value={state.firstName}
 						className={`${state.isFirstNameError ? 'input-error' : null}`}
 						onChange={(e) => handleInputChange(e, state, dispatch)}
+						onLoad={(e) => e.target.focus()}
 					/>
 					{state.isFirstNameError && (
 						<FaExclamationCircle className="icon-inline-error" />
@@ -78,7 +79,7 @@ function Form() {
 						value={state.emailAddress}
 						className={`${state.isEmailAddressError ? 'input-error' : null}`}
 						onChange={(e) => handleInputChange(e, state, dispatch)}
-						onLoad={(e) => e.target.focus()}
+						
 					/>
 					{state.isEmailAddressError && (
 						<FaExclamationCircle className="icon-inline-error" />
