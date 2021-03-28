@@ -23,10 +23,13 @@ function Form() {
 			</div>
 			<div className="wrapper">
 				<div className="input-wrapper">
+					<label htmlFor="firstName" className="hidden">
+						First Name
+					</label>
 					<input
 						type="text"
-						placeholder="First Name"
 						id="firstName"
+						placeholder="First Name"
 						name="firstName"
 						value={state.firstName}
 						className={`${state.isFirstNameError ? 'input-error' : null}`}
@@ -42,6 +45,9 @@ function Form() {
 				)}
 
 				<div className="input-wrapper">
+					<label htmlFor="lastName" className="hidden">
+						Last Name
+					</label>
 					<input
 						type="text"
 						placeholder="Last Name"
@@ -61,6 +67,9 @@ function Form() {
 				)}
 
 				<div className="input-wrapper">
+					<label htmlFor="emailAddress" className="hidden">
+						Email Adress
+					</label>
 					<input
 						type="email"
 						placeholder="Email Address"
@@ -69,6 +78,7 @@ function Form() {
 						value={state.emailAddress}
 						className={`${state.isEmailAddressError ? 'input-error' : null}`}
 						onChange={(e) => handleInputChange(e, state, dispatch)}
+						onLoad={(e) => e.target.focus()}
 					/>
 					{state.isEmailAddressError && (
 						<FaExclamationCircle className="icon-inline-error" />
@@ -85,6 +95,9 @@ function Form() {
 					}`}
 				>
 					<div className="input-wrapper">
+						<label htmlFor="password" className="hidden">
+							Password
+						</label>
 						<input
 							type="password"
 							placeholder="Password"

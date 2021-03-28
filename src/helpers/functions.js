@@ -35,6 +35,7 @@ const handleSubmit = (e, dispatch) => {
 		event.emailAddress.value &&
 		event.password.value
 	) {
+		event.firstName.focus();
 		return dispatch({ type: 'FORM_VALIDATED' });
 	}
 
