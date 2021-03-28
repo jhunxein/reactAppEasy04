@@ -74,6 +74,11 @@ form {
 		&::placeholder {
 			font-weight: 600;
 		}
+
+		&:invalid {
+			border-color: $clr-primary-1;
+			color: $clr-primary-1;
+		}
 	}
 
 	.input-error {

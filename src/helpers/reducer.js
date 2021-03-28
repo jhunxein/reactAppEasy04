@@ -10,6 +10,8 @@ function reducer(state, action) {
 			return { ...state, emailAddress: payload };
 		case 'PASSWORD_CHANGE':
 			return { ...state, password: payload };
+
+		// For errors
 		case 'FIRSTNAME_ERROR':
 			return { ...state, isFirstNameError: true };
 		case 'LASTNAME_ERROR':
@@ -19,7 +21,7 @@ function reducer(state, action) {
 		case 'PASSWORD_ERROR':
 			return { ...state, isPasswordError: true };
 
-		// Removing errors on type
+		// Removing errors on input
 		case 'REMOVE_FIRSTNAME_ERROR':
 			return { ...state, isFirstNameError: false };
 		case 'REMOVE_LASTNAME_ERROR':
@@ -32,6 +34,10 @@ function reducer(state, action) {
 		case 'FORM_VALIDATED':
 			return {
 				...state,
+				firstName: '',
+				lastName: '',
+				emailAddress: '',
+				password: '',
 				isFirstNameError: false,
 				isLastNameError: false,
 				isEmailAddressError: false,
