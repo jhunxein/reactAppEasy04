@@ -29,6 +29,15 @@ const handleSubmit = (e, dispatch) => {
 
 	const event = e.target;
 
+	if (
+		event.firstName.value &&
+		event.lastName.value &&
+		event.emailAddress.value &&
+		event.password.value
+	) {
+		dispatch({ type: 'FORM_VALIDATED' });
+	}
+
 	if (!event.firstName.value) {
 		dispatch({ type: 'FIRSTNAME_ERROR' });
 	}
@@ -45,8 +54,6 @@ const handleSubmit = (e, dispatch) => {
 
 const handleInputChange = (e, state, dispatch) => {
 	const event = e.target;
-
-	console.log(state);
 
 	if (event.name.toLowerCase() === 'firstname') {
 		dispatch({ type: 'FIRSTNAME_CHANGE', payload: event.value });
@@ -80,8 +87,6 @@ const handleInputChange = (e, state, dispatch) => {
 		}
 		return;
 	}
-
-	dispatch({ type: 'FORM_VALIDATED' });
 };
 
 export { handleSubmit, handleInputChange, togglePassword };

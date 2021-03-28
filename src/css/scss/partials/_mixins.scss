@@ -1,8 +1,3 @@
 @mixin calcPixeltoEm($property, $px) {
 	#{$property}: $px / $font-size#{'em'};
 }
-
-@function calc($px) {
-	$result: ($px / 16);
-	@return $result#{'em'};
-}
