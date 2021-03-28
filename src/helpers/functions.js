@@ -35,7 +35,7 @@ const handleSubmit = (e, dispatch) => {
 		event.emailAddress.value &&
 		event.password.value
 	) {
-		dispatch({ type: 'FORM_VALIDATED' });
+		return dispatch({ type: 'FORM_VALIDATED' });
 	}
 
 	if (!event.firstName.value) {
