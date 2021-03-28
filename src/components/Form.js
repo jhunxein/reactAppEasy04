@@ -1,4 +1,4 @@
-import React, { useState, useReducer } from 'react';
+import React, { useState, useReducer, useEffect, useRef } from 'react';
 import { defObj } from './../helpers/defObj';
 import reducer from './../helpers/reducer';
 
@@ -13,6 +13,12 @@ import { FaEye, FaEyeSlash, FaExclamationCircle } from 'react-icons/fa';
 function Form() {
 	const [showPassword, setShowPassword] = useState(false);
 	const [state, dispatch] = useReducer(reducer, defObj);
+
+	const refInputContainer = useRef(null);
+
+	useEffect(() => {
+		refInputContainer.current.focus();
+	}, []);
 
 	return (
 		<form onSubmit={(e) => handleSubmit(e, dispatch)}>
@@ -34,7 +40,7 @@ function Form() {
 						value={state.firstName}
 						className={`${state.isFirstNameError ? 'input-error' : null}`}
 						onChange={(e) => handleInputChange(e, state, dispatch)}
-						onLoad={(e) => e.target.focus()}
+						ref={refInputContainer}
 					/>
 					{state.isFirstNameError && (
 						<FaExclamationCircle className="icon-inline-error" />
@@ -79,7 +85,6 @@ function Form() {
 						value={state.emailAddress}
 						className={`${state.isEmailAddressError ? 'input-error' : null}`}
 						onChange={(e) => handleInputChange(e, state, dispatch)}
-						
 					/>
 					{state.isEmailAddressError && (
 						<FaExclamationCircle className="icon-inline-error" />
