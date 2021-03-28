@@ -1,2 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
 @import './partials/variables';
 @import './partials/layout';
+@import './partials/hero';
+@import './partials/form';
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	font-family: 'Poppins', sans-serif;
+	font-size: $font-size;
+}

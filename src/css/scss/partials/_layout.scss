@@ -1,13 +1,48 @@
-* {
-	box-sizing: border-box;
-}
+@import './mixins';
 .container {
 	width: 100%;
-	height: 100vh;
-	background-color: black;
-	color: white;
+	height: 100%;
+	padding: 6em 1.5em 4.25em 1.5em;
+	transition: $transition;
 
-	h1 {
-		margin: 0;
+	background: $clr-primary-1 url('./../../../assets/images/bg-intro-mobile.png');
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+
+	@media only screen and (min-height: 813px) {
+		height: 100vh !important;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	@media only screen and (min-width: 820px) {
+		background: $clr-primary-1
+			url('./../../../assets/images/bg-intro-desktop.png');
+	}
+
+	.container-wrapper {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		margin: 0 auto;
+		align-items: center;
+		justify-content: center;
+		@include calcPixeltoEm(max-width, 1110px);
+
+		@media only screen and (min-width: $desktop) {
+			flex-direction: row;
+		}
+	}
+
+	p {
+		line-height: 29px;
+	}
+
+	button:focus,
+	input:focus {
+		outline: 1px solid black;
+		outline-offset: 3px;
 	}
 }

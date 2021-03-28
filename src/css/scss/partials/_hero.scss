@@ -1,0 +1,29 @@
+@import './mixins';
+
+section {
+	color: white;
+	text-align: center;
+	@media only screen and (min-width: $desktop) {
+		text-align: left;
+		@include calcPixeltoEm(padding-right, 56px);
+	}
+
+	h1 {
+		font-size: 1.5em;
+		margin-top: 0;
+		line-height: 29px;
+		@media only screen and (min-width: $desktop) {
+			@include calcPixeltoEm(font-size, 39px);
+			@include calcPixeltoEm(line-height, 16px);
+		}
+	}
+	p {
+		font-size: 1em;
+		@include calcPixeltoEm(margin-bottom, 69px);
+
+		@media only screen and (min-width: $desktop) {
+			@include calcPixeltoEm(font-size, 14px);
+			margin-bottom: 0;
+		}
+	}
+}
