@@ -109,7 +109,7 @@ function Form() {
 							className={`${showPassword ? 'is-active' : null}`}
 							onClick={() => togglePassword(setShowPassword, showPassword)}
 						>
-							<FaEye />
+							{showPassword ? <FaEyeSlash /> : <FaEye />}
 						</button>
 					</div>
 				</div>
